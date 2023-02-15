@@ -16,7 +16,7 @@ jobs:
           node-version: "16.x"
 
       - name: Install
-        run: npm install # 安装依赖
+        run: pnpm install # 安装依赖
 
       - name: Build
         run: npm run build # 打包
