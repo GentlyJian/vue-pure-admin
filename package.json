@@ -2,6 +2,7 @@
   "name": "pure-admin-thin",
   "version": "3.9.7",
   "private": true,
+  "homepage": "https://GentlyJian.github.io/vue-pure-admin",
   "scripts": {
     "dev": "NODE_OPTIONS=--max-old-space-size=4096 vite",
     "serve": "pnpm dev",
