@@ -49,7 +49,7 @@ const onLogin = async (formEl: FormInstance | undefined) => {
             // 获取后端路由
             initRouter().then(() => {
               router.push("/");
-              message("登录成功", { type: "success" });
+              message("登录成功！", { type: "success" });
             });
           }
         });
