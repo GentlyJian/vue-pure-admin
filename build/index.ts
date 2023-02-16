@@ -1,9 +1,10 @@
 /** 处理环境变量 */
+import pkg from "../package.json";
 const warpperEnv = (envConf: Recordable): ViteEnv => {
   /** 此处为默认值 */
   const ret: ViteEnv = {
     VITE_PORT: 8848,
-    VITE_PUBLIC_PATH: "",
+    VITE_PUBLIC_PATH: pkg.name || "",
     VITE_ROUTER_HISTORY: "",
     VITE_CDN: false,
     VITE_COMPRESSION: "none"
