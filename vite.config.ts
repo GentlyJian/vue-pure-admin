@@ -29,8 +29,9 @@ const __APP_INFO__ = {
 export default ({ command, mode }: ConfigEnv): UserConfigExport => {
   const { VITE_CDN, VITE_PORT, VITE_COMPRESSION, VITE_PUBLIC_PATH } =
     warpperEnv(loadEnv(mode, root));
+  console.log(resolve(VITE_PUBLIC_PATH, name));
   return {
-    base: VITE_PUBLIC_PATH,
+    base: resolve(VITE_PUBLIC_PATH, name),
     root,
     resolve: {
       alias
