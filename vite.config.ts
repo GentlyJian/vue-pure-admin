@@ -30,7 +30,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
   const { VITE_CDN, VITE_PORT, VITE_COMPRESSION, VITE_PUBLIC_PATH } =
     warpperEnv(loadEnv(mode, root));
   return {
-    base: resolve(VITE_PUBLIC_PATH, name),
+    base: VITE_PUBLIC_PATH,
     root,
     resolve: {
       alias
