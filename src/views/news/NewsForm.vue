@@ -155,8 +155,8 @@ const submitForm = async (formEl: FormInstance | undefined) => {
       await emit("init");
       _this.$message.success("接口调用成功");
       setTimeout(() => {
-        visible.value = false;
-      }, 2000);
+        cancel(formEl);
+      }, 1000);
     } else {
       console.log("error submit!", fields);
       _this.$message.error("字段校验失败");
