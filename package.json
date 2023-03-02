@@ -1,7 +1,8 @@
 {
-  "name": "pure-admin-thin",
+  "name": "vue-pure-admin",
   "version": "3.9.7",
   "private": true,
+  "homepage": "https://GentlyJian.github.io/vue-pure-admin",
   "scripts": {
     "dev": "NODE_OPTIONS=--max-old-space-size=4096 vite",
     "serve": "pnpm dev",
@@ -62,7 +63,7 @@
     "@types/element-resize-detector": "1.1.3",
     "@types/js-cookie": "^3.0.1",
     "@types/mockjs": "^1.0.7",
-    "@types/node": "^18.11.9",
+    "@types/node": "^18.11.14",
     "@types/nprogress": "0.2.0",
     "@types/qs": "^6.9.7",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
