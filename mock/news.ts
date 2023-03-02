@@ -1,5 +1,6 @@
 // 根据角色动态生成路由
 import { MockMethod } from "vite-plugin-mock";
+import dayjs from "dayjs";
 const global_news = [
   {
     t_id: 1,
@@ -144,7 +145,14 @@ export default [
     method: "post",
     response: ({ body }) => {
       const { news } = body;
-      global_news.push(body.news);
+      global_news.push(
+        Object.assign(news, {
+          t_id: global_news.length + 1,
+          u_id: 1,
+          status: 0,
+          create_time: dayjs().format("YYYY-MM-DD HH:mm:ss")
+        })
+      );
       return {
         success: true,
         data: {

@@ -13,9 +13,16 @@
         <el-input v-model="newsForm.title" />
       </el-form-item>
       <el-form-item label="文章类型" prop="type">
-        <el-select v-model="newsForm.type" placeholder="请选择文章类型">
-          <el-option label="Zone one" value="shanghai" />
-          <el-option label="Zone two" value="beijing" />
+        <el-select
+          v-model="newsForm.type"
+          placeholder="请选择文章类型"
+          clearable
+        >
+          <el-option
+            :value="item.value"
+            :key="item.value"
+            v-for="item in typeOption"
+          />
         </el-select>
       </el-form-item>
       <el-form-item label="文章标签" prop="tag">
@@ -80,6 +87,10 @@ watch(
     console.log(newVal, oldVal);
   }
 );
+const typeOption = [
+  { lable: "技术", value: "技术" },
+  { lable: "民事", value: "民事" }
+];
 const formSize = ref<EpPropMergeType>("default");
 const newsFormRef = ref<FormInstance>();
 const newsForm = reactive({

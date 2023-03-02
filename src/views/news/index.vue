@@ -1,5 +1,13 @@
 <template>
   <div>
+    <div class="bg-white border-gray-200 p-5 flex">
+      <div>
+        <el-button type="primary" @click="handleAdd">新增</el-button>
+      </div>
+      <div class="ml-10">
+        <el-button type="success" @click="initData">搜索</el-button>
+      </div>
+    </div>
     <el-table :data="pageList" border>
       <el-table-column prop="t_id" label="id" />
       <el-table-column prop="title" label="标题">
@@ -105,10 +113,12 @@ const statusTag: IstatusTag = {
   "1": { type: "warning", label: "已下架" }
 };
 const pageList = computed(() => {
-  return list.value.slice(
+  const s_list = list.value.slice(
     (pageNum.value - 1) * pageSize.value,
     pageSize.value * pageNum.value
   );
+  console.log(s_list);
+  return s_list;
 });
 onMounted(async () => {
   await loadData({ u_id: 1 });
@@ -139,6 +149,10 @@ const handleEdit = (_index, _info) => {
   content_id.value = _info.content_id;
   newsFormRef.value.newsForm = Object.assign(newsFormRef.value.newsForm, _info);
   console.log(newsFormRef.value.newsForm);
+};
+const handleAdd = () => {
+  newsFormRef.value.visible = true;
+  newsFormRef.value.title = "新增新闻";
 };
 const handleDelete = async (_index?, _info?) => {
   const { t_id } = _info;
