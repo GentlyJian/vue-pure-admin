@@ -1,1 +1,0 @@
-import{_ as o}from"./NewsForm.vue_vue_type_script_setup_true_lang-7e3798f2.js";import"./index-abf2ad1d.js";import"./runtime-core.esm-bundler-5e6ff93b.js";import"./vue-router-6a953c55.js";export{o as default};
